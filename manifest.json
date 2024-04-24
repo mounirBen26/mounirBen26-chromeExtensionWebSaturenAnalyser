@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name":"fourth ext",
+    "version": "1.0",
+    "description": "fourth extension",
+    "icons": {
+        "16":"graphique16.png",
+        "48":"graphique48.png",
+        "128": "graphique128.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+      },
+    "permissions": ["activeTab","scripting","storage"],
+    "web_accessible_resources": [
+        {
+          "resources": ["Chart.min.js"],
+          "matches": ["<all_urls>"]
+        }
+      ]
+}

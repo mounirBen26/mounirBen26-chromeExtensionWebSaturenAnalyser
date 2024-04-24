@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Chart.min.js"></script>
+    <title>Analyseur de Profile</title>
+    <style>
+        body {
+            width: 800px;
+            height: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #analyser {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            background-color: rgb(21, 214, 169);
+            border-color: transparent;
+            border-radius: 5px;
+            width: 100px;
+            height: 40px;
+            box-shadow: 2px 2px 4px rgb(36, 99, 67);
+            cursor: pointer;
+        }
+        #analyser:hover {
+            background-color: rgb(21, 87, 65);
+        }
+
+        h3 {
+            background-color: rgb(172, 89, 89);
+            border-radius: 5px;
+            width: 164px;
+            height: 20px;
+            color: white;
+            padding: 5px 5px 5px 39px;
+            justify-content: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        table,
+        th,
+        td {
+            border: 1.5px solid black;
+        }
+
+        th,
+        td {
+            padding: 6px;
+            text-align: center;
+        }
+        #abonneTitle{
+            font-weight: 700;
+            font-size:20px;
+            color:rgb(54, 53, 53);
+        }
+        #clientVerifier{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 700px;
+        }
+        #saveData {
+            background-color: rgb(34, 131, 99);
+            border:none;
+            border-radius: 5px;
+            padding: 5px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100px;
+            margin-bottom: 2px;
+            box-shadow: 2px 2px 4px rgb(36, 99, 67);
+        }
+        #saveData:hover{
+            background-color: rgb(54, 113, 118);
+        }
+        /* #retrieveData{
+            background-color: rgb(34, 131, 99);
+            border:none;
+            border-radius: 5px;
+            padding: 5px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100px;
+        } */
+        #list-container{
+            list-style: none;
+        }
+        #clear{
+            background-color: red;
+            border:none;
+            border-radius: 5px;
+            color:white;
+            font-weight: bold;
+            padding: 5px;
+            margin-top: 5px;
+            cursor: pointer;
+            width: 100px;
+            box-shadow: 2px 2px 4px rgb(99, 45, 36);
+
+        
+        }
+        #clear:hover{
+            background-color: rgb(194, 16, 78);
+        }
+    </style>
+</head>
+
+<body>
+    <h2>VEFRIFICATEUR DE PROFILE DE CONSOMMATION</h2>
+    <section id="clientVerifier">
+        <hr width="100%" color="blue" size="1" style="margin-bottom: 20px;">
+        <button id="saveData">Ajouter</button>
+        <!-- <button id="retrieveData">Afficher</button> -->
+        <h4>Liste des Clients à vérifier sur terrain:</h4>
+        <div id="list-container"></div>
+        <!-- <button id="clear">Reset</button> -->
+        <hr width="100%" color="blue" size="1" style="margin-top: 20px;">
+    </section>
+    <h3>Analyse de Profile:</h3>
+    Intitulé du Client: <p id="abonneTitle"></p>
+    <button  id="analyser">Analyser</button>
+    <hr>
+    <canvas id="lineChart" class="chart-canvas"></canvas><br>
+    <h3 id="exportTitle" style="width: 200px;background-color:rgb(208, 61, 103) ;font-size: 12px;">Evolution Registre Export</h3>
+    <canvas id="exportChart"></canvas><br>
+    <canvas id="consomDiff"></canvas><br>
+    <section style="font-weight: 600;font-size: 12px;" id="table">Tableau de Consommation Energie Active Par Phase: </section>
+    <footer><blockquote style="font-weight: 600;">Développé par Hacene Benlazreg - © Decembre 2023</blockquote> </footer>
+    <script src="chart.js"></script>
+</body>
+
+</html>
